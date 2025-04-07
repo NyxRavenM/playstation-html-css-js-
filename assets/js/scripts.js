@@ -220,7 +220,7 @@ const secondSectionData = [
   {
     mainTitle: "Discover all PS5 \n<br />consoles and\n<br />accessories",
     image:
-      "assets/images/Section2 images/ps5/ps5-slim-disc-console-featured-hardware-image-block-02-en-15.webp",
+      "assets/images/Section2 images/choose-item/ps5-slim-disc-console-featured-hardware-image-block-02-en-15.webp",
     title: "Playstation 5 Console",
     description:
       "Experience an all-new generation of incredible <br />PlayStation games",
@@ -445,3 +445,37 @@ comingSoonBtn.addEventListener("click", () => {
 loadGameCards(thirdSectionData);
 
 // End Section 3 Games List
+
+// Start Section 4 Anniversary
+
+const anniversaryTxt = document.querySelector(".anniv-content h1");
+const annivParagraphTxt = document.querySelector(".anniv-content p");
+const originalTitle = anniversaryTxt.textContent;
+const originalParagraph = annivParagraphTxt.textContent;
+let currentIndexAnnivTitle = 0;
+let currentIndexAnnivParagraph = 0;
+
+anniversaryTxt.textContent = "";
+annivParagraphTxt.textContent = "";
+
+function typeAnniversaryTxt() {
+  if (currentIndexAnnivTitle < originalTitle.length) {
+    anniversaryTxt.textContent += originalTitle[currentIndexAnnivTitle];
+    currentIndexAnnivTitle++;
+    setTimeout(typeAnniversaryTxt, 60);
+  } else {
+    setTimeout(typeParagraphTxt, 200);
+  }
+}
+
+function typeParagraphTxt() {
+  if (currentIndexAnnivParagraph < originalParagraph.length) {
+    annivParagraphTxt.textContent += originalParagraph[currentIndexAnnivParagraph];
+    currentIndexAnnivParagraph++;
+    setTimeout(typeParagraphTxt, 30);
+  }
+}
+
+typeAnniversaryTxt();
+
+// End Section 4 Anniversary
