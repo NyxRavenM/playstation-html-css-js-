@@ -1,5 +1,57 @@
 "use strict";
 
+// *********************** Start Read This !!! ***********************
+
+// 1 - Website Loader
+// 2 - Hamburgur Menu
+// 3 - Navigation open-up Desktop
+// 4 - Sign up modal 
+// 5 - First Section Slider
+// 6 - Second Section Slider
+// 7 - Game List Filter
+// 8 - Auto Typing
+// 9 - FooterAccordion
+
+// *********************** End Read This !!! ***********************
+
+
+
+// Start Loader
+
+// (function(){  
+//   function randomShape(array) {
+//     return array[Math.floor(Math.random() * array.length)];
+//   }
+  
+//   function loadingScreen(){ 
+//     var cross = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/cross.png';
+//     var circle = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/circle.png';
+//     var triangle = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/triangle.png';
+//     var square = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/square.png';
+    
+//     var elements = document.querySelectorAll('.ps-icon');
+//     Array.prototype.forEach.call(elements, function(el, i){
+//       setTimeout(function(){ 
+//         el.style.animation = "scaling 1s 1"; 
+//         el.style.backgroundImage = "url("+randomShape([triangle,square,circle,cross])+")";      
+//       }, (i * 400));
+//     });
+
+//     // Hide loader after 3 seconds
+//     setTimeout(function() {
+//       var loader = document.querySelector('.loader');
+//       loader.style.opacity = '0';
+//       setTimeout(function() {
+//         loader.style.display = 'none';
+//       }, 500); // Wait for fade out transition
+//     }, 2000);
+//   }
+  
+//   loadingScreen();
+// })();
+
+// End Loader
+
 // Navbar Desktop
 
 const Navbar = document.querySelectorAll("nav button");
@@ -480,7 +532,7 @@ function typeAnniversaryTxt() {
   if (currentIndexAnnivTitle < originalTitle.length) {
     anniversaryTxt.textContent += originalTitle[currentIndexAnnivTitle];
     currentIndexAnnivTitle++;
-    setTimeout(typeAnniversaryTxt, 60);
+    setTimeout(typeAnniversaryTxt, 200);
   } else {
     setTimeout(typeParagraphTxt, 200);
   }
@@ -490,7 +542,7 @@ function typeParagraphTxt() {
   if (currentIndexAnnivParagraph < originalParagraph.length) {
     annivParagraphTxt.textContent += originalParagraph[currentIndexAnnivParagraph];
     currentIndexAnnivParagraph++;
-    setTimeout(typeParagraphTxt, 30);
+    setTimeout(typeParagraphTxt, 50);
   }
 }
 
@@ -498,8 +550,17 @@ typeAnniversaryTxt();
 
 // End Section 4 Anniversary
 
+// Start Footer Accordion
 
-// Start Section 5 Scroller
+const accordionHeader = document.querySelectorAll('.footer-accordion-header');
+
+accordionHeader.forEach(header => {
+  header.addEventListener('click', () => {
+    const parentUl = header.parentElement;
+    parentUl.classList.toggle('active');
+  });
+});
+
+// End Footer Accordion
 
 
-// ِEnd Section 5 Scroller

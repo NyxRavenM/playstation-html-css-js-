@@ -95,6 +95,86 @@ button {
   height: 65px;
 }
 
+/* Start Loader */
+.loader {
+  background: #1d80d6;
+  background: -moz-linear-gradient(-45deg, #1d80d6 0%, #05306d 34%, #05306d 70%, #1d80d6 100%);
+  background: -webkit-linear-gradient(-45deg, #1d80d6 0%,#05306d 34%,#05306d 70%,#1d80d6 100%);
+  background: linear-gradient(135deg, #1d80d6 0%,#05306d 34%,#05306d 70%,#1d80d6 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1d80d6', endColorstr='#1d80d6',GradientType=1);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000000;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease;
+}
+
+.ps4-icons {
+  position: absolute;
+  width: 12vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 1s ease;
+}
+
+@-moz-keyframes scaling {
+  0% { transform: rotate(270deg) scale(0); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+@-webkit-keyframes scaling {
+  0% { transform: rotate(270deg) scale(0); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+@keyframes scaling {
+  0% { transform: rotate(270deg) scale(0); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+@-o-keyframes scaling {
+  0% { transform: rotate(270deg) scale(0); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.cross-icon {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/cross.png) no-repeat;
+  background-size: 100%;
+  width: 4vw;
+  height: 4vw;
+  margin: 1vw;
+  float: left;
+}
+
+.square-icon {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/square.png) no-repeat;
+  background-size: 100%;
+  width: 4vw;
+  height: 4vw;
+  margin: 1vw;
+  float: left;
+}
+
+.triangle-icon {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/triangle.png) no-repeat;
+  background-size: 100%;
+  width: 4vw;
+  height: 4vw;
+  margin: 1vw;
+  float: left;
+}
+
+.circle-icon {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/769286/circle.png) no-repeat;
+  background-size: 100%;
+  width: 4vw;
+  height: 4vw;
+  margin: 1vw;
+  float: left;
+}
+
+/* End Loader */
+
 /* Header */
 
 @media (max-width: 899px) {
@@ -141,7 +221,7 @@ header {
   background-color: var(--whiteColor);
   width: 100vw;
   height: 65px;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .header-cont {
@@ -255,7 +335,7 @@ nav svg {
   padding: 1rem 0;
   transition: all 0.2s;
   background-color: var(--whiteColor);
-  z-index: 1000;
+  z-index: 1001;
 }
 
 .nav-item {
@@ -279,7 +359,7 @@ nav svg {
   width: 100%;
   top: 0;
   position: fixed;
-  z-index: 100001;
+  z-index: 10001;
 }
 
 .form-cont {
@@ -289,7 +369,7 @@ nav svg {
   flex-direction: column;
   gap: 1rem;
   background-color: var(--whiteColor);
-  z-index: 100001;
+  z-index: 1000003;
   padding: 2rem;
   width: 500px;
   border-radius: 1rem;
@@ -341,7 +421,7 @@ nav svg {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 100000;
+  z-index: 100002;
 }
 
 .login-module-cont.show {
@@ -1038,8 +1118,242 @@ section {
 
 /* End Section 4 */
 
+
 /* Start Section 5 */
 
+@media (max-width: 800px) {
+  .sec5 {
+    grid-template-areas: 
+    'store-img store-img store-img store-img store-img store-img'
+    'store-content store-content store-content store-content store-content store-content'
+    ;
+  padding: 5rem 1rem;
+  }
+}
 
+@media (min-width: 800px) {
+  .sec5 {
+    grid-template-areas: 
+    'store-content store-content store-img store-img store-img store-img'
+    'store-content store-content store-img store-img store-img store-img'
+    ;
+    padding: 6rem 3rem;
+  }
+}
+
+.sec5 {
+  display: grid;
+  grid-column-gap: 5rem;
+  grid-row-gap: 2rem;
+}
+
+.sec5-playstation-store-content {
+  grid-area: store-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sec5-playstation-store-content h1 {
+  font-size: 2rem;
+  font-weight: 100;
+}
+
+.sec5-playstation-store-content p {
+  font-size: 1rem;
+  color: var(--svgColor);
+  font-weight: 100;
+}
+
+.store-logo img {
+  width: 300px;
+}
+
+.sec5-playstation-store-content button {
+  font-size: 1rem;
+}
+
+.sec5-playstation-store-img {
+  grid-area: store-img;
+}
+
+.sec5-playstation-store-img img {
+  width: 100%;
+  border-radius: 1rem;
+}
 
 /* End Section 5 */
+
+
+/* Start Footer */
+
+@media (max-width: 800px) {
+  .footer-content {
+    grid-template-areas: 
+    'list-1 list-1 list-1 list-1'
+    'list-2 list-2 list-2 list-2'
+    'list-3 list-3 list-3 list-3'
+    'list-4 list-4 list-4 list-4'
+     !important;
+  }
+
+  .footer-content {
+    display: none !important;
+  }
+
+  .footer-content-mobile {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 800px) {
+  .footer-content {
+    grid-template-areas: 
+    'list-1 list-2 list-3 list-4'
+    'list-1 list-2 list-3 list-4'
+    'list-1 list-2 list-3 list-4'
+    'list-1 list-2 list-3 list-4'
+    ;
+  }
+
+  .footer-content {
+    display: grid !important;
+  }
+
+  .footer-content-mobile {
+    display: none !important;
+  }
+}
+
+footer {
+  padding: 20px 40px;
+  background-color: #00439C;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+footer hr {
+  color: var(--svgColor) !important;
+  background-color: #3D69B0;
+  border: none;
+  height: 1px;
+}
+
+.sony-logo {
+  height: 50px;
+  padding: 10px 0;
+}
+
+.sony-logo img {
+  height: 100%;
+}
+
+.footer-content {
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-column-gap: 1rem;
+}
+
+.footer-content ul:nth-child(1) {
+  grid-area: list-1;
+}
+
+.footer-content ul:nth-child(2) {
+  grid-area: list-2;
+}
+
+.footer-content ul:nth-child(3) {
+  grid-area: list-3;
+}
+
+.footer-content ul:nth-child(4) {
+  grid-area: list-4;
+}
+
+.footer-content ul {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  color: var(--whiteColor);
+  font-weight: 100;
+  font-size: .9rem;
+}
+
+.footer-content ul span {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.footer-license {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-license-text span {
+  color: var(--whiteColor);
+  font-weight: 100;
+  font-size: .9rem;
+}
+
+.footer-license-images {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.footer-license-images > div {
+  height: 100%;
+}
+
+.footer-license-images div img {
+  height: 100%;
+}
+
+/* Accordion */
+
+.footer-content-mobile {
+  display: none;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.footer-content-mobile ul {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  color: var(--whiteColor);
+  font-weight: 100;
+  font-size: .9rem;
+}
+
+.footer-content-mobile ul li {
+  display: none;
+}
+
+.footer-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-accordion-header span {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.footer-content-mobile ul.active li {
+  display: block;
+}
+
+.footer-accordion-header svg {
+  transition: transform 0.3s ease;
+}
+
+.footer-content-mobile ul.active .footer-accordion-header svg {
+  transform: rotate(45deg);
+}
+
+/* End Footer */
