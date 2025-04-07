@@ -58,6 +58,24 @@ Close.addEventListener("click", () => {
 
 // End Hamburger Menu
 
+/* Start Login Module */
+
+const signUpModuleBtn = document.querySelector('.sign-in')
+const moduleDarkOpacity = document.querySelector('.dark-opacity');
+const loginModule = document.querySelector('.login-module-cont');
+
+signUpModuleBtn.addEventListener('click', () => {
+  moduleDarkOpacity.classList.add('show')
+  loginModule.classList.add('show')
+
+  moduleDarkOpacity.addEventListener('click', () => {
+    loginModule.classList.remove('show');
+    moduleDarkOpacity.classList.remove('show');
+  });
+})
+
+/* End Login Module */
+
 // Banner Slider
 
 const firstSectionData = [
@@ -479,3 +497,9 @@ function typeParagraphTxt() {
 typeAnniversaryTxt();
 
 // End Section 4 Anniversary
+
+
+// Start Section 5 Scroller
+
+
+// ِEnd Section 5 Scroller
